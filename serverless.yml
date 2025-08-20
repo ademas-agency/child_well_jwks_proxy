@@ -1,0 +1,17 @@
+service: child_well_jwks_proxy
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: eu-west-3
+  environment:
+    COGNITO_REGION: eu-west-3
+    COGNITO_USERPOOL_ID: eu-west-3_p1kwac3jy
+
+functions:
+  jwks:
+    handler: handler.jwks
+    events:
+      - httpApi:
+          path: /_jwks
+          method: GET
