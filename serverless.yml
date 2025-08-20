@@ -1,4 +1,4 @@
-service: child_well_jwks_proxy
+service: child-well-jwks-proxy
 
 provider:
   name: aws
